@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ setSelectedCategory }) => {
   const [nav, setNav] = useState(false);
@@ -10,9 +11,9 @@ const Navbar = ({ setSelectedCategory }) => {
   };
   console.log(setSelectedCategory);
   return (
-    <div className="text-black h-20 max-w-[1600px] mx-auto flex justify-around items-center">
+    <div className="bg-white fixed text-black h-20 w-full mx-auto flex justify-around items-center">
       <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-200 inline-block text-transparent bg-clip-text">
-        NoGlutenFoods
+        <Link to="/">NoGlutenFoods</Link>
       </h1>
       <div className="flex gap-3 md:gap-6">
         <button className="rounded-lg h-8 w-28 border border-orange-300 btn-color">
@@ -48,10 +49,14 @@ const Navbar = ({ setSelectedCategory }) => {
       >
         <ul className="text-center grid grid-cols-2 gap-2 p-8 text-xl w-full bg-color rounded-md text-white md:hidden ">
           <li className="p-2 border border-white rounded-lg  btn-color-small ">
-            <a href="#burgers">NoGlutenBurgers</a>
+            <a href="#burger" onClick={() => setSelectedCategory("burger")}>
+              NoGlutenBurgers
+            </a>
           </li>
           <li className="p-2 border border-white  rounded-lg btn-color-small">
-            <a href="#pizza">NoGlutenPizza</a>
+            <a href="#pizza" onClick={() => setSelectedCategory("pizza")}>
+              NoGlutenPizza
+            </a>
           </li>
 
           <button className="p-2 border border-white  rounded-lg btn-color-small">
