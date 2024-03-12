@@ -1,28 +1,32 @@
 import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiOutlineMenu,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ setSelectedCategory }) => {
+const Navbar = ({ setSelectedCategory, toggleCartVisibility }) => {
   const [nav, setNav] = useState(false);
 
   const toggleNav = () => {
     setNav(!nav);
     console.log("état : " + nav);
   };
-  console.log(setSelectedCategory);
+
   return (
     <div className="bg-white fixed text-black h-20 w-full mx-auto flex justify-around items-center">
       <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-200 inline-block text-transparent bg-clip-text">
         <Link to="/">NoGlutenFoods</Link>
       </h1>
-      <div className="flex gap-3 md:gap-6">
-        <button className="rounded-lg h-8 w-28 border border-orange-300 btn-color">
-          Commander
-        </button>
-        <button className="rounded-lg h-8 w-16 border border-orange-300 btn-color">
-          Panier
-        </button>
-      </div>
+
+      <button
+        onClick={toggleCartVisibility}
+        className="p-5 my-auto text-2xl text-orange-300"
+      >
+        <AiOutlineShoppingCart />
+      </button>
+
       <ul className="text-center hidden md:flex gap-6">
         <a href="#burgers" onClick={() => setSelectedCategory("burger")}>
           <li className="rounded-lg h-8 w-36 border border-orange-300 btn-color">
@@ -50,21 +54,14 @@ const Navbar = ({ setSelectedCategory }) => {
         <ul className="text-center grid grid-cols-2 gap-2 p-8 text-xl w-full bg-color rounded-md text-white md:hidden ">
           <li className="p-2 border border-white rounded-lg  btn-color-small ">
             <a href="#burger" onClick={() => setSelectedCategory("burger")}>
-              NoGlutenBurgers
+              Burgers
             </a>
           </li>
           <li className="p-2 border border-white  rounded-lg btn-color-small">
             <a href="#pizza" onClick={() => setSelectedCategory("pizza")}>
-              NoGlutenPizza
+              Pizza
             </a>
           </li>
-
-          <button className="p-2 border border-white  rounded-lg btn-color-small">
-            Commander
-          </button>
-          <button className="p-2 border border-white  rounded-lg btn-color-small">
-            Panier
-          </button>
         </ul>
       </div>
     </div>

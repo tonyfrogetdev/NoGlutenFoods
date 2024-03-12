@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="max-w-[1600px] mx-auto grid sm:grid-cols-2 sm:h-[600px] gap-4">
       <div className="bg-food-image2 bg-cover bg-center w-full flex flex-col justify-center text-center p-4 h-[300px] sm:h-full">
-        <div className="bg-white rounded-xl w-[400px] md:w-[700px] mx-auto grid grid-cols-10 p-4">
+        <div className="bg-white rounded-xl w-[350px] md:w-[700px] mx-auto grid grid-cols-10 p-4">
           <form className="border border-slate-800 col-span-7 sm:col-span-8 flex justify-between  items-center max-w-[700px] mx-auto w-full p-1 rounded-md ">
             <input
               type="text"

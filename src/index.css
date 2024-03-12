@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  overflow-x: hidden;
+}
+
 .btn-color:hover {
   @apply bg-gradient-to-r from-orange-400 to-amber-200;
 }
