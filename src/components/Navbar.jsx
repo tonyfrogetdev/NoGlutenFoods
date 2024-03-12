@@ -15,7 +15,7 @@ const Navbar = ({ setSelectedCategory, toggleCartVisibility }) => {
   };
 
   return (
-    <div className="bg-white fixed text-black h-20 w-full mx-auto flex justify-around items-center">
+    <div className="z-20 bg-white fixed text-black h-20 w-full mx-auto flex justify-around items-center">
       <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-400 to-amber-200 inline-block text-transparent bg-clip-text">
         <Link to="/">NoGlutenFoods</Link>
       </h1>

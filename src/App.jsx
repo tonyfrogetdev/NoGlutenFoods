@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import NoGlutenFoods from "./components/NoGlutenFoods";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
+import Info from "./components/Info";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -20,20 +20,19 @@ function App() {
           setSelectedCategory={setSelectedCategory}
           toggleCartVisibility={toggleCartVisibility}
         />
-
+        <Hero />
         <Routes>
           <Route
             path="/"
             element={
-              <Layout>
-                <NoGlutenFoods
-                  selectedCategory={selectedCategory}
-                  isCartVisible={isCartVisible}
-                />
-              </Layout>
+              <NoGlutenFoods
+                selectedCategory={selectedCategory}
+                isCartVisible={isCartVisible}
+              />
             }
           />
         </Routes>
+        <Info />
       </>
     </BrowserRouter>
   );

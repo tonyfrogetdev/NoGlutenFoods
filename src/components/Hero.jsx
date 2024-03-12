@@ -16,7 +16,7 @@ const Hero = () => {
             </button>
           </form>
           {/* Le bouton est bizarre en écran tablette*/}
-          <button className="ml-4 mx-auto my-auto col-span-2 rounded-lg before:ease h-8 w-24 overflow-hidden bg-color">
+          <button className="ml-4 mx-auto my-auto col-span-2 rounded-lg before:ease h-8 w-16 overflow-hidden bg-color">
             <span>Clique</span>
           </button>
         </div>

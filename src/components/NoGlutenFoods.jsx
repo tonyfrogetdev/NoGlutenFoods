@@ -47,11 +47,11 @@ const NoGlutenFoods = ({ selectedCategory, isCartVisible }) => {
 
   return (
     <div
-      className=" my-10 max-w-[1600px] place-items-center flex flex-col gap-12 lg:mx-auto"
+      className=" my-10 max-w-[1600px] items-center flex flex-col gap-12 lg:mx-auto glass"
       id="food"
     >
       {isCartVisible && (
-        <div className="z-10 fixed p-4 right-0 top-[80px] bg-color w-96 h-96 overflow-y-scroll">
+        <div className="z-10 fixed  p-4 right-0 top-[80px] bg-color w-full md:w-[500px] h-96 overflow-y-scroll">
           <p className="text-2xl font-bold">
             Ta commande : {getTotalAmount()}€
           </p>
@@ -60,24 +60,19 @@ const NoGlutenFoods = ({ selectedCategory, isCartVisible }) => {
               return (
                 <div
                   key={food.id}
-                  className="glass my-3 grid grid-cols-5 overflow-hidden"
+                  className="glass my-3 grid grid-cols-3 items-center overflow-hidden"
                 >
                   <img
                     src={food.productImage}
                     alt={food.productName}
-                    className="rounded-lg w-[100px] h-[100px] object-cover col-span-2"
+                    className="rounded-lg w-[100px] h-[100px] object-cover"
                   />
-                  <div>
-                    <p className="text-xl font-bold pl-2">
-                      {cartItems[food.id]} x
-                    </p>
-                    <p className="flex items-center space-x-4 italic">
-                      {food.productName}
-                    </p>
+                  <div className="col-span-1">
+                    <p className="text-xl font-bold">{cartItems[food.id]} x</p>
+                    <p className="italic">{food.productName}</p>
                     <p>{food.price}€</p>
                   </div>
-
-                  <div className="relative right-0 bottom-0 gap-2 font-bold">
+                  <div className="col-span-1 flex justify-end">
                     <button
                       onClick={() => removeFromCart(food.id)}
                       className="text-red-500 bg-red-300 hover:text-red-100 p-2 rounded"
@@ -92,17 +87,17 @@ const NoGlutenFoods = ({ selectedCategory, isCartVisible }) => {
         </div>
       )}
 
-      <h2 className="text-3xl p-4 w-full text-start">NoGlutenFoods</h2>
-      <div className="grid lg:grid-cols-4 place-items-center gap-6">
+      <h2 className="text-3xl p-4 w-full text-center">NoGlutenFoods</h2>
+      <div className="grid lg:grid-cols-4 items-center gap-6">
         {filterFoods.map((food) => (
           <div
             key={food.id}
-            className="card w-full md:w-[380px] bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+            className=" w-full md:w-[380px] bg-white  rounded-lg overflow-hidden transition-all duration-200 hover:scale-105"
           >
             <img
               src={food.productImage}
               alt={food.productName}
-              className="object-cover object-center w-full h-48"
+              className="object-cover object-center md:w-full w-80 h-48"
             />
 
             <div className="p-4">
