@@ -5,6 +5,7 @@ import NoGlutenFoods from "./components/NoGlutenFoods";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Info from "./components/Info";
 import OurApp from "./components/OurApp";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -35,6 +36,7 @@ function App() {
         </Routes>
         <Info />
         <OurApp />
+        <Footer />
       </>
     </BrowserRouter>
   );
