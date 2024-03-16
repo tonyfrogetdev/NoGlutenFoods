@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import NoGlutenFoods from "./components/NoGlutenFoods";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Info from "./components/Info";
+import OurApp from "./components/OurApp";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -33,6 +34,7 @@ function App() {
           />
         </Routes>
         <Info />
+        <OurApp />
       </>
     </BrowserRouter>
   );
